@@ -1,0 +1,9 @@
+package com.ustglobal.phoneapp.dto;
+
+public class Contact {
+	
+	private String name;
+	private int number;
+	private String Groups;
+
+}

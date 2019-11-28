@@ -1,0 +1,6 @@
+
+public abstract class Animal
+{
+	abstract void makeNoise();  //if you have ine abstract method make calss as abstract
+
+}

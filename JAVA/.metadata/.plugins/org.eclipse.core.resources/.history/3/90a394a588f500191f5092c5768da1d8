@@ -1,0 +1,9 @@
+
+public class Square 
+{
+	void shape()
+	{
+		System.out.println("shape is changed");
+	}
+
+}

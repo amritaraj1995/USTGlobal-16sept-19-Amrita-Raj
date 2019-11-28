@@ -1,0 +1,13 @@
+package com.ustglobal.phoneapp.dao;
+
+import com.ustglobal.phoneapp.dto.Contact;
+
+public interface ContactDAO {
+
+
+	public Contact searchContact(String name);
+
+	public boolean addContact(Contact con);
+	
+
+}

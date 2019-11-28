@@ -1,0 +1,14 @@
+
+public abstract class GraphicObject
+{
+	move()
+	{
+		System.out.println("Move");
+	}
+	
+	abstract shape()
+	{
+		System.out.println("Shape");
+	}
+
+}
