@@ -1,0 +1,8 @@
+package com.ustglobal.jpawithhibernate.manytomany;
+
+public class Course {
+	
+	private int cid;
+	private String cname;
+
+}

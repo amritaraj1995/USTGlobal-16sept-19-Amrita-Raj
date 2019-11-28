@@ -1,0 +1,9 @@
+package com.ustglobal.springcore.di;
+
+public class Human implements Animal {
+	@Override
+	public void makesound() {
+		System.out.println("Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla");
+	}
+
+}

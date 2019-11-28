@@ -1,0 +1,35 @@
+package com.ustglobal.springcorebookapp;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.ustglobal.springcore.config.ConfigurationClass;
+import com.ustglobal.springcore.di.Pet;
+import com.ustglobal.springcorebookapp.di.Book;
+
+public class AnnotationApp {
+	
+	public static void main(String[] args) {
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ConfigurationClass.class);
+	
+	Book book = context.getBean(Book.class);
+	System.out.println(book.getMsg());
+	
+	Book book1 = context.getBean(book.class);
+	System.out.println(book);
+	System.out.println(book1);
+	System.out.println("******************************************");
+	
+//	Animal animal = context.getBean(Animal.class);
+//	animal.makeSound();
+	
+	
+	System.out.println("************************************");
+	
+	Pet pet = context.getBean(Pet.class);
+	System.out.println(pet.getName());
+	pet.getAnimal().makeSound();
+	
+	context.close();
+	}
+
+}

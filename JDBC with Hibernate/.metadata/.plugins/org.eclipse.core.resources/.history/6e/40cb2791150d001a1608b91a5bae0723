@@ -1,0 +1,12 @@
+package com.ustglobal.jpawithhibernate.manytomany;
+
+import java.util.List;
+
+public class Course {
+	
+	private int cid;
+	private String cname;
+	
+	private List<Course> course;
+
+}

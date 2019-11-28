@@ -1,0 +1,16 @@
+package com.ustglobal.jpawithhibernateassignment2;
+
+import com.ustglobal.jpawithhibernateassignment2.dto.Training;
+
+public class Insert {
+	
+	public static void main(String[] args) {
+		
+		Training training = new Training();
+		training.setSno(1);
+		training.setSname("HTML");
+		training.setTrainername("Jasmin");
+		training.setDays(3);
+	}
+
+}

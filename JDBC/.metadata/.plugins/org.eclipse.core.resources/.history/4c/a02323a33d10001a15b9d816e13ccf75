@@ -1,0 +1,25 @@
+package com.ustglobal.springcore.di;
+
+public class Hello {
+
+	private String msg;
+	
+	Hello hello = new Hello();
+
+	public String getMsg() {
+		return msg;
+	}
+	
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
+	public void init() {
+		System.out.println("Init method excuting from Hello");
+	}
+
+	public void destroy() {
+		System.out.println("Destroy method excuting from Hello");
+	}
+
+}

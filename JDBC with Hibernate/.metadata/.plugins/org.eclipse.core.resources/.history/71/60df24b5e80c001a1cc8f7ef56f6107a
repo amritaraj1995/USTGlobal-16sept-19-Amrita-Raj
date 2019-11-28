@@ -1,0 +1,15 @@
+package com.ustglobal.jpawithhibernate.onetoone;
+
+import lombok.Data;
+
+@Data
+public class Person {
+	
+	private int pid;
+	private String pname;
+	
+	
+	
+	
+
+}

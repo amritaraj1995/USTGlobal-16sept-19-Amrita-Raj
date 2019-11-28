@@ -1,0 +1,37 @@
+package com.ustglobal.jpawithhibernate.jpql;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import com.ustglobal.jpawithhibernate.dto.Product;
+
+public class DynamicInsertJPQL {
+	
+	public static void main(String[] args) {
+		EntityManager entityManage = null;
+		EntityTransaction entityTransaction = null;
+			try {
+			EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
+			EntityManager entityManager = entityManagerFactory.createEntityManager();
+			EntityTransaction entityTransaction = entityManager.getTransaction();
+			entityTransaction.begin();
+			String jpql = "insert into Product(pid,pname,quantity) values(:id,:name,:quantity)";
+			Query query = entityManager.createNativeQuery(jpql);
+			query.setParameter("name", "Car");
+			query.setParameter("id", 104);
+			query.setParameter("quantity", 6);
+			int result = query.executeUpdate();
+			System.out.println(result);
+			entityTransaction.commit();
+			}catch (Exception e) {
+				e.printStackTrace();
+				entityTransaction.rollback();
+			}finally {
+				entityManager.close();
+		}//end of main method
+	}
+
+}

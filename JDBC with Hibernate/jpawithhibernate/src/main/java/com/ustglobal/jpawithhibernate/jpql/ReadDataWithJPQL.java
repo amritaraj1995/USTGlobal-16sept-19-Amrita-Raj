@@ -1,0 +1,45 @@
+package com.ustglobal.jpawithhibernate.jpql;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import com.ustglobal.jpawithhibernate.dto.Product;
+
+public class ReadDataWithJPQL {
+
+	public static void main(String[] args) {
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+//		String jpql = "from Product";
+//		Query query = entityManager.createQuery(jpql);
+//		
+//		List<Product> al = query.getResultList();
+//		for(Product product : al) {
+//			System.out.println("Product Id : "+product.getPid());
+//			System.out.println("Product Name : "+product.getPname());
+//			System.out.println("Quantity : "+product.getQuantity());
+//			System.out.println("-------------------------------------------");
+//		}
+//
+//
+//		entityManager.close();
+		
+//------------------------------------------------------------------------------------------------------------------
+		String jpql = "select pname from Product";
+		Query query = entityManager.createQuery(jpql);
+		
+		List<String> products = query.getResultList();
+		for(String product : products) {
+			
+			System.out.println(" Product Name : "+product);
+			
+		}
+	}
+	
+
+}

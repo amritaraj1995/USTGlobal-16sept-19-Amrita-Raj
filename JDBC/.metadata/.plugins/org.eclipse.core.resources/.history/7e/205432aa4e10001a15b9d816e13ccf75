@@ -1,0 +1,17 @@
+package com.ustglobal.springcorebookapp.config;
+
+import org.springframework.context.annotation.Bean;
+
+import com.ustglobal.springcorebookapp.di.Book;
+
+public class ConfigurationClass {
+	
+	@Bean(name="book")
+	//@Scope("prototype")
+	public Book getBook() {
+		Book hello = new Book();
+		hello.setMsg("I Love Games");
+		return book;
+	}
+
+}
