@@ -1,0 +1,24 @@
+<div class="col-md-6 offset-3 card card-body">
+<form [formGroup]="registerForm" (ngSubmit)="printForm()">
+<div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" name="name" formControlName='name' id="name">
+</div>
+    <div class="form-group">
+        <label for="email">email</label>
+    <input type="email" name="email" id="email" formControlName='email'>
+</div>
+<div class="form-group"><label for="password">password</label>
+    <input type="password" name="password" id="password" formControlName='password'>
+</div>
+
+    <button class="btn btn-primary" (click)="addSkills()">Add Skills</button>
+<div formArrayName='skills' *ngFor='let control registerForm.get("skills").controls; index as i'>
+<div class="form-group">
+    <label for="{{'skills'+ (i+1)}}">skill {{i+1}}</label>
+    <input type="text" name="skill" id="{{'skill' + i}}" [formControlName]='i' class="form-control">
+</div>
+</div>
+<button type="submit" class="btn btn-outline-success float-left">Submit</button>
+</form>
+</div>
